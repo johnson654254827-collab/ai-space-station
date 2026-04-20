@@ -1,23 +1,19 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-// 定义需要保护的路由
-const isProtectedRoute = createRouteMatcher([
-  '/dashboard(.*)',
-  '/api/keys(.*)',
-  '/api/billing(.*)',
-]);
+// 简单中间件，不进行认证检查
+// 所有路由都公开访问
 
-export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) {
-    await auth.protect();
-  }
-});
+export function middleware(request: NextRequest) {
+  // 可以在这里添加日志、重定向等逻辑
+  // 目前所有路由都允许访问
+  
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
-    // 跳过静态文件、API路由（除了需要保护的）
-    '/((?!_next/static|_next/image|favicon.ico|api/waitlist).*)',
-    // 总是运行中间件
-    '/(api|trpc)(.*)',
+    // 匹配所有路由，除了静态文件
+    '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 };

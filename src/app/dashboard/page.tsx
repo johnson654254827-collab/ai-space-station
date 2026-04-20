@@ -1,4 +1,3 @@
-import { UserButton } from "@clerk/nextjs";
 import { Rocket, Cpu, Database, Zap, BarChart, Settings } from "lucide-react";
 import Link from "next/link";
 
@@ -20,7 +19,12 @@ export default function DashboardPage() {
               >
                 返回首页
               </Link>
-              <UserButton />
+              <Link
+                href="/#pricing"
+                className="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-sm font-medium text-white hover:from-blue-700 hover:to-purple-700"
+              >
+                查看定价
+              </Link>
             </div>
           </div>
         </div>
@@ -29,23 +33,31 @@ export default function DashboardPage() {
       <div className="container mx-auto px-4 py-8">
         {/* 欢迎部分 */}
         <div className="rounded-2xl border border-blue-500/30 bg-gradient-to-r from-blue-900/30 to-transparent p-8 mb-8 backdrop-blur-sm">
-          <h1 className="text-3xl font-bold text-white mb-2">🚀 欢迎回到控制台</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">🚀 AI太空站功能预览</h1>
           <p className="text-gray-300 mb-6">
-            您正在管理AI太空站资源。查看API用量、管理模型、监控性能。
+            探索AI工具生态枢纽平台的各项功能。注册后即可解锁完整控制台。
           </p>
           <div className="flex flex-wrap gap-4">
             <div className="rounded-lg bg-blue-500/20 px-4 py-2">
-              <div className="text-sm text-blue-300">当前轨道</div>
-              <div className="font-bold text-white">探索者轨道</div>
+              <div className="text-sm text-blue-300">平台状态</div>
+              <div className="font-bold text-white">即将上线</div>
             </div>
             <div className="rounded-lg bg-purple-500/20 px-4 py-2">
-              <div className="text-sm text-purple-300">API调用剩余</div>
-              <div className="font-bold text-white">8,247 / 10,000</div>
+              <div className="text-sm text-purple-300">AI模型数量</div>
+              <div className="font-bold text-white">100+</div>
             </div>
             <div className="rounded-lg bg-green-500/20 px-4 py-2">
-              <div className="text-sm text-green-300">活跃模型</div>
-              <div className="font-bold text-white">3 / 5</div>
+              <div className="text-sm text-green-300">等待用户</div>
+              <div className="font-bold text-white">正在招募</div>
             </div>
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/#waitlist"
+              className="inline-block rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 font-medium text-white hover:from-blue-700 hover:to-purple-700"
+            >
+              加入等待列表，获取优先访问权
+            </Link>
           </div>
         </div>
 

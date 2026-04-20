@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import StarsBackground from "@/components/StarsBackground";
 import MouseFollower from "@/components/MouseFollower";
 import "./globals.css";
@@ -27,20 +26,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider
-      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-      appearance={{
-        variables: {
-          colorPrimary: "#3b82f6",
-          colorText: "#ffffff",
-          colorBackground: "#0f172a",
-          colorInputBackground: "#1e293b",
-        },
-        elements: {
-          formButtonPrimary: "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700",
-        },
-      }}
-    >
       <html
         lang="zh-CN"
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
@@ -113,6 +98,5 @@ export default function RootLayout({
           <StarsBackground />
         </body>
       </html>
-    </ClerkProvider>
   );
 }
