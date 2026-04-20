@@ -1,155 +1,165 @@
-# AI Website Cloner Template
+# 🚀 AI太空站
 
-<a href="https://github.com/JCodesMore/ai-website-cloner-template/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" /></a> <a href="https://github.com/JCodesMore/ai-website-cloner-template/stargazers"><img src="https://img.shields.io/github/stars/JCodesMore/ai-website-cloner-template?style=flat" alt="Stars" /></a> <a href="https://discord.gg/hrTSX5yTpB"><img src="https://img.shields.io/discord/1400896964597383279?label=discord" alt="Discord" /></a>
+**中国首个AI工具生态枢纽平台 · 公安部备案**
 
-A reusable template for reverse-engineering any website into a clean, modern Next.js codebase using AI coding agents. 
+一个现代化的AI工具聚合平台，为开发者、创作者和企业提供一站式AI解决方案。整合100+AI模型与工具，提供统一的API接口、开发者工具和团队协作功能。
 
-**Recommended: [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with Opus 4.6 for best results** — but works with a variety of AI coding agents.
+## ✨ 功能特性
 
-Point it at a URL, run `/clone-website`, and your AI agent will inspect the site, extract design tokens and assets, write component specs, and dispatch parallel builders to reconstruct every section.
+### 🛰️ 核心模块
+- **AI模型市场** - 发现、比较、试用100+AI模型
+- **API集成中心** - 统一API密钥管理，实时调用监控
+- **开发者工具舱** - 完整SDK、CLI工具、测试沙箱
+- **资源轨道站** - 高质量数据集、预训练模型、教程文档
+- **协作空间站** - 团队项目管理、版本控制、实时协作
+- **数据分析舱** - 使用统计、性能监控、成本分析
 
-## Demo
+### 🔐 安全合规
+- ✅ 公安部备案 · 中国境内数据存储
+- 🔒 银行级加密技术 · 端到端安全
+- 📜 严格遵守《个人信息保护法》
 
-[![Watch the demo](docs/design-references/comparison.png)](https://youtu.be/O669pVZ_qr0)
+### 💰 变现模式
+- **SaaS订阅**（探索者/开发者/团队轨道）
+- **API调用费**（阶梯定价，高频优惠）
+- **平台服务费**（模型交易佣金、定制训练）
+- **企业解决方案**（私有化部署、专属支持）
 
-> Click the image above to watch the full demo on YouTube.
+## 🏗️ 技术栈
 
-## Quick Start
+### 前端
+- **Next.js 16** - React 框架，App Router
+- **TypeScript** - 类型安全
+- **Tailwind CSS v4** - 实用优先的CSS框架
+- **shadcn/ui + Base UI** - 组件库
+- **Clerk** - 用户认证与管理
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/JCodesMore/ai-website-cloner-template.git my-clone
-   cd my-clone
-   ```
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-3. **Start your AI agent** — Claude Code recommended:
-   ```bash
-   claude --chrome
-   ```
-4. **Run the skill**:
-   ```
-   /clone-website <target-url1> [<target-url2> ...]
-   ```
-5. **Customize** (optional) — after the base clone is built, modify as needed
+### 后端
+- **Next.js API Routes** - 服务端API
+- **Prisma** - 数据库ORM（待集成）
+- **PostgreSQL/Supabase** - 数据库（待集成）
 
-> Using a different agent? Open `AGENTS.md` for project instructions — most agents pick it up automatically.
+### 部署
+- **Vercel** - 边缘部署，全球CDN
+- **GitHub Actions** - CI/CD流水线
 
-## Supported Platforms
+## 🚀 快速开始
 
-| Agent                                                         | Status                     |
-| ------------------------------------------------------------- | -------------------------- |
-| [Claude Code](https://docs.anthropic.com/en/docs/claude-code) | **Recommended** — Opus 4.6 |
-| [Codex CLI](https://github.com/openai/codex)                  | Supported                  |
-| [OpenCode](https://opencode.ai/)                              | Supported                  |
-| [GitHub Copilot](https://github.com/features/copilot)         | Supported                  |
-| [Cursor](https://cursor.com/)                                 | Supported                  |
-| [Windsurf](https://codeium.com/windsurf)                      | Supported                  |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli)     | Supported                  |
-| [Cline](https://github.com/cline/cline)                       | Supported                  |
-| [Roo Code](https://github.com/RooCodeInc/Roo-Code)            | Supported                  |
-| [Continue](https://continue.dev/)                             | Supported                  |
-| [Amazon Q](https://aws.amazon.com/q/developer/)               | Supported                  |
-| [Augment Code](https://www.augmentcode.com/)                  | Supported                  |
-| [Aider](https://aider.chat/)                                  | Supported                  |
+### 环境要求
+- Node.js >= 18
+- npm 或 yarn
+- Git
 
-## Prerequisites
+### 本地开发
+```bash
+# 克隆仓库
+git clone https://github.com/你的用户名/ai-space-station.git
+cd ai-space-station
 
-- [Node.js](https://nodejs.org/) 24+
-- An AI coding agent (see [Supported Platforms](#supported-platforms))
+# 安装依赖
+npm install
 
-## Tech Stack
+# 配置环境变量
+cp .env.example .env.local
+# 编辑 .env.local 填入真实密钥
 
-- **Next.js 16** — App Router, React 19, TypeScript strict
-- **shadcn/ui** — Radix primitives + Tailwind CSS v4
-- **Tailwind CSS v4** — oklch design tokens
-- **Lucide React** — default icons (replaced by extracted SVGs during cloning)
+# 启动开发服务器
+npm run dev
+```
 
-## How It Works
+访问 http://localhost:3000 查看网站。
 
-The `/clone-website` skill runs a multi-phase pipeline:
+### 生产部署
+详细部署指南请参阅 [DEPLOYMENT.md](./DEPLOYMENT.md)。
 
-1. **Reconnaissance** — screenshots, design token extraction, interaction sweep (scroll, click, hover, responsive)
-2. **Foundation** — updates fonts, colors, globals, downloads all assets
-3. **Component Specs** — writes detailed spec files (`docs/research/components/`) with exact computed CSS values, states, behaviors, and content
-4. **Parallel Build** — dispatches builder agents in git worktrees, one per section/component
-5. **Assembly & QA** — merges worktrees, wires up the page, runs visual diff against the original
-
-Each builder agent receives the full component specification inline — exact `getComputedStyle()` values, interaction models, multi-state content, responsive breakpoints, and asset paths. No guessing.
-
-## Use Cases
-
-- **Platform migration** — rebuild a site you own from WordPress/Webflow/Squarespace into a modern Next.js codebase
-- **Lost source code** — your site is live but the repo is gone, the developer left, or the stack is legacy. Get the code back in a modern format
-- **Learning** — deconstruct how production sites achieve specific layouts, animations, and responsive behavior by working with real code
-
-## Not Intended For
-
-- **Phishing or impersonation** — this project must not be used for deceptive purposes, impersonation, or any activity that breaks the law.
-- **Passing off someone's design as your own** — logos, brand assets, and original copy belong to their owners.
-- **Violating terms of service** — some sites explicitly prohibit scraping or reproduction. Check first.
-
-## Project Structure
+## 📁 项目结构
 
 ```
 src/
-  app/              # Next.js routes
-  components/       # React components
-    ui/             # shadcn/ui primitives
-    icons.tsx       # Extracted SVG icons
-  lib/utils.ts      # cn() utility
-  types/            # TypeScript interfaces
-  hooks/            # Custom React hooks
-public/
-  images/           # Downloaded images from target
-  videos/           # Downloaded videos from target
-  seo/              # Favicons, OG images
-docs/
-  research/         # Extraction output & component specs
-  design-references/ # Screenshots
-scripts/
-  sync-agent-rules.sh  # Regenerate agent instruction files
-  sync-skills.mjs      # Regenerate /clone-website for all platforms
-AGENTS.md           # Agent instructions (single source of truth)
-CLAUDE.md           # Claude Code config (imports AGENTS.md)
-GEMINI.md           # Gemini CLI config (imports AGENTS.md)
+├── app/                    # Next.js 应用路由
+│   ├── api/               # API 端点
+│   │   └── waitlist/      # 等待列表 API
+│   ├── dashboard/         # 用户控制台（受保护）
+│   ├── sign-in/           # 登录页面
+│   ├── sign-up/           # 注册页面
+│   └── page.tsx           # 主页面
+├── components/            # React 组件
+│   ├── ui/               # 基础 UI 组件
+│   ├── HeroSection.tsx   # 首页英雄区
+│   ├── Features.tsx      # 功能展示
+│   ├── Gallery.tsx       # 项目案例
+│   ├── Pricing.tsx       # 定价页面
+│   ├── FAQ.tsx           # 常见问题
+│   └── WaitlistForm.tsx  # 等待列表表单
+├── lib/                  # 工具函数
+└── middleware.ts         # 认证中间件
 ```
 
-## Commands
+## 🔧 配置说明
 
-```bash
-npm run dev    # Start dev server
-npm run build  # Production build
-npm run lint   # ESLint check
-npm run typecheck # TypeScript check
-npm run check  # Run lint + typecheck + build
+### 环境变量
+复制 `.env.example` 为 `.env.local` 并配置：
+
+```env
+# Clerk 认证
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_xxx
+CLERK_SECRET_KEY=sk_test_xxx
+
+# 应用配置
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
+
+# 数据库（待集成）
+# DATABASE_URL="postgresql://user:pass@localhost:5432/db"
 ```
 
-### If using docker
+### Clerk 配置
+1. 访问 [clerk.com](https://clerk.com) 注册账号
+2. 创建新应用，选择 Next.js
+3. 复制 Publishable Key 和 Secret Key
+4. 配置回调 URL：`http://localhost:3000/api/auth/callback`
 
-```bash
-docker compose up app --build # build and run the app
-docker compose up dev --build # run the app in dev mode on port 3001
-```
+## 📈 开发路线图
 
-## Updating for Other Platforms
+### ✅ 已完成
+- [x] AI太空站主题网站（前端）
+- [x] 用户认证系统（Clerk 集成）
+- [x] 等待列表系统（前端 + API）
+- [x] 响应式设计，太空科技主题
 
-Two source-of-truth files power all platform support. Edit the source, then run the sync script:
+### 🚧 短期开发（1-2周）
+- [ ] 基础 API 网关（调用计数与限制）
+- [ ] Stripe/Paddle 支付集成
+- [ ] 基础管理后台
+- [ ] 数据库集成（Supabase/PostgreSQL）
 
-| What                   | Source of truth                         | Sync command                       |
-| ---------------------- | --------------------------------------- | ---------------------------------- |
-| Project instructions   | `AGENTS.md`                             | `bash scripts/sync-agent-rules.sh` |
-| `/clone-website` skill | `.claude/skills/clone-website/SKILL.md` | `node scripts/sync-skills.mjs`     |
+### 📅 中长期（1-3月）
+- [ ] 完整开发者工具套件
+- [ ] 模型市场 MVP
+- [ ] 企业级功能（私有化部署、SLA）
+- [ ] 移动端应用
 
-Each script regenerates the platform-specific copies automatically. Agents that read the source files natively need no regeneration.
+## 🤝 贡献指南
 
+欢迎提交 Issue 和 Pull Request！
 
-## Star History
+1. Fork 本仓库
+2. 创建功能分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'Add amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 开启 Pull Request
 
-[![Star History Chart](https://api.star-history.com/svg?repos=JCodesMore/ai-website-cloner-template&type=Date)](https://star-history.com/#JCodesMore/ai-website-cloner-template&Date)
+## 📄 许可证
 
-## License
+本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-MIT
+## 📞 联系与支持
+
+- **项目维护者**：周鑫
+- **备案信息**：AI太空站（公安部备案）
+- **业务合作**：business@ai-space-station.com
+- **技术支持**：support@ai-space-station.com
+
+---
+
+**AI太空站** - 连接AI宇宙的下一个前沿 🚀

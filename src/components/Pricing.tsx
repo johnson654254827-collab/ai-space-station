@@ -74,7 +74,7 @@ const orbits = [
 
 export default function Pricing() {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-gray-950" id="pricing">
+    <section className="py-20 bg-gradient-to-b from-gray-950/80 to-background/80" id="pricing">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl text-white">

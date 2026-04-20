@@ -65,7 +65,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-950 to-background" id="faq">
+    <section className="py-20 bg-gradient-to-b from-background/80 to-gray-950/80" id="faq">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl text-white">
@@ -144,7 +144,7 @@ export default function FAQ() {
         
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-400">
-            © 2026 AI太空站 - 已获公安部备案。保留所有权利。
+            © 2026 AI太空站 版权所有，渝ICP备2026006660号
             <br />
             <a href="#" className="hover:underline text-gray-300">服务协议</a> • 
             <a href="#" className="mx-2 hover:underline text-gray-300">隐私政策</a> • 

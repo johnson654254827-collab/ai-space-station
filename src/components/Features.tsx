@@ -1,4 +1,4 @@
-import { Database, Code, Cpu, Cloud, Terminal, BarChart, Package, Server, Satellite, Rocket } from 'lucide-react';
+import { Database, Code, Cpu, Cloud, Terminal, BarChart, Package, Server, Satellite, Rocket, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const features = [
@@ -54,7 +54,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-gray-950" id="features">
+    <section className="py-20 bg-gradient-to-b from-gray-950/80 to-background/80" id="features">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl text-white">
@@ -72,34 +72,36 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group relative rounded-2xl border ${feature.color} ${feature.bgColor} p-8 transition-all hover:shadow-xl hover:shadow-[${feature.iconColor}]/20 backdrop-blur-sm`}
+              className={`group relative rounded-2xl border ${feature.color} ${feature.bgColor} p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-[${feature.iconColor}]/30 hover:scale-105 backdrop-blur-sm shadow-lg shadow-black/10 hover:border-opacity-70`}
             >
-              <div className={`absolute -top-4 left-8 rounded-full border ${feature.color} bg-gray-900 p-3 group-hover:bg-gray-800`}>
-                <div className={feature.iconColor}>{feature.icon}</div>
+              <div 
+                className={`absolute -top-4 left-8 rounded-full border ${feature.color} bg-gray-900 p-3 group-hover:bg-gray-800 transition-all duration-300 group-hover:shadow-[0_0_20px_${feature.iconColor.replace('text-', '')}] group-hover:scale-110`}
+              >
+                <div className={`${feature.iconColor} group-hover:animate-pulse`}>{feature.icon}</div>
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">{feature.title}</h3>
-              <p className="mt-2 text-gray-300">{feature.description}</p>
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
-              <div className="mt-4 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">
-                进入模块 →
+              <h3 className="mt-4 text-xl font-bold text-white neon-glow">{feature.title}</h3>
+              <p className="mt-2 text-gray-300 group-hover:text-gray-200 transition-colors">{feature.description}</p>
+              <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent group-hover:via-gray-500 transition-all duration-300" />
+              <div className="mt-4 text-sm text-gray-400 hover:text-white transition-all duration-300 cursor-pointer group-hover:translate-x-2 inline-flex items-center gap-1">
+                进入模块 <ArrowRight className="size-4 opacity-0 group-hover:opacity-100 transition-all duration-300" />
               </div>
             </div>
           ))}
         </div>
         
-        <div className="mt-20 rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-900/30 to-transparent p-8 md:p-12 backdrop-blur-sm">
+        <div className="mt-20 rounded-2xl border border-blue-500/50 bg-gradient-to-br from-blue-900/40 to-transparent p-8 md:p-12 backdrop-blur-sm shadow-[0_0_40px_rgba(59,130,246,0.2)] hover:shadow-[0_0_60px_rgba(59,130,246,0.3)] transition-all duration-500">
           <div className="grid items-center gap-8 md:grid-cols-2">
             <div>
               <h3 className="text-2xl font-bold text-white">🚀 立即启动免费轨道</h3>
               <p className="mt-2 text-gray-300">
                 无需信用卡，立即获得AI太空站基础访问权限。体验100+AI工具的无限可能。
               </p>
-              <Button className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-0 px-8 py-6 text-lg">
+              <Button className="mt-6 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-0 px-8 py-6 text-lg shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_rgba(59,130,246,0.7)] transition-all duration-300 animate-pulse-slow border border-blue-400/30 hover:border-blue-300/50">
                 <Rocket className="size-5 mr-2" />
                 发射免费账户
               </Button>
             </div>
-            <div className="rounded-xl border border-blue-500/30 bg-gray-900/50 p-6 backdrop-blur-sm">
+            <div className="rounded-xl border border-blue-500/50 bg-gray-900/60 p-6 backdrop-blur-sm shadow-[0_0_20px_rgba(59,130,246,0.1)] hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] hover:border-blue-400/70 transition-all duration-300">
               <div className="flex items-center gap-4">
                 <div className="size-12 rounded-lg bg-blue-500/20 flex items-center justify-center">
                   <Satellite className="size-6 text-blue-400" />

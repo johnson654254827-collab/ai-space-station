@@ -14,7 +14,7 @@ export default function Home() {
       <Pricing />
       
       {/* 等待列表部分 */}
-      <section className="py-20 bg-gradient-to-b from-background to-gray-950">
+      <section className="py-20 bg-gradient-to-b from-gray-950/80 to-background/80">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl text-white">
@@ -51,16 +51,15 @@ export default function Home() {
       
       <FAQ />
       
-      <footer className="py-12 text-center text-sm text-gray-400 border-t border-gray-800 mt-12 bg-gray-950">
+      <footer className="py-12 text-center text-sm text-gray-400 border-t border-gray-800 mt-12 bg-gray-950/90 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <p>© 2026 AI太空站 - 已获公安部备案。保留所有权利。</p>
+          <p>© 2026 AI太空站 版权所有，渝ICP备2026006660号</p>
           <p className="mt-2">中国首个AI工具生态枢纽平台 · 连接100+AI模型与工具</p>
           <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs">
             <a href="#" className="text-gray-400 hover:text-white hover:underline">服务协议</a>
             <a href="#" className="text-gray-400 hover:text-white hover:underline">隐私政策</a>
             <a href="#" className="text-gray-400 hover:text-white hover:underline">Cookie政策</a>
             <a href="#" className="text-gray-400 hover:text-white hover:underline">内容规范</a>
-            <a href="#" className="text-gray-400 hover:text-white hover:underline">公安部备案信息</a>
           </div>
         </div>
       </footer>

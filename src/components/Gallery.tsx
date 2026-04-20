@@ -73,7 +73,7 @@ const projects = [
 
 export default function Gallery() {
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-950 to-background">
+    <section className="py-20 bg-gradient-to-b from-background/80 to-gray-950/80">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl text-white">

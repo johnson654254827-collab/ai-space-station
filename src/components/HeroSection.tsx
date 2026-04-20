@@ -3,30 +3,30 @@ import { ArrowRight, Satellite, Rocket, Cpu, Globe, Zap } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-b from-gray-950 to-background">
-      {/* Space background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
-      <div className="absolute top-20 left-10 size-64 bg-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 size-80 bg-purple-600/10 rounded-full blur-3xl" />
+    <section className="relative overflow-hidden py-20 md:py-32">
+      {/* 透明遮罩，让背景显示但不会太亮 */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-gray-900/60 to-gray-950/80 backdrop-blur-sm" />
       
-      {/* Stars */}
-      <div className="absolute top-1/4 left-1/4 size-1 bg-white rounded-full animate-pulse" />
-      <div className="absolute top-1/3 right-1/3 size-1 bg-blue-300 rounded-full animate-pulse delay-300" />
-      <div className="absolute bottom-1/4 left-1/3 size-1.5 bg-cyan-300 rounded-full animate-pulse delay-500" />
+      {/* 前景光晕效果 - 更柔和 */}
+      <div className="absolute top-20 left-10 size-64 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 size-80 bg-purple-600/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 bg-cyan-500/3 rounded-full blur-3xl" />
+      
+      {/* 动态星星 - 增强效果 */}
+      <div className="absolute top-1/4 left-1/4 size-1.5 bg-white rounded-full animate-pulse shadow-[0_0_8px_#ffffff]" />
+      <div className="absolute top-1/3 right-1/3 size-1 bg-blue-300 rounded-full animate-pulse delay-300 shadow-[0_0_6px_#93c5fd]" />
+      <div className="absolute bottom-1/4 left-1/3 size-2 bg-cyan-300 rounded-full animate-pulse delay-500 shadow-[0_0_10px_#67e8f9]" />
+      <div className="absolute top-10 right-1/4 size-1 bg-purple-300 rounded-full animate-pulse delay-700 shadow-[0_0_6px_#c4b5fd]" />
+      <div className="absolute bottom-1/3 left-10 size-1.5 bg-blue-400 rounded-full animate-pulse delay-1000 shadow-[0_0_8px_#60a5fa]" />
       
       <div className="container relative mx-auto px-4 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-background/80 px-4 py-2 text-sm backdrop-blur-sm mb-6">
-          <Satellite className="size-4 text-blue-400" />
-          <span className="text-blue-300">🚀 已获公安部备案 · AI太空站</span>
-          <Zap className="size-4 text-yellow-400" />
-        </div>
         
         <h1 className="mx-auto max-w-5xl text-4xl font-bold tracking-tight md:text-6xl lg:text-7xl">
           探索
-          <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-500 bg-clip-text text-transparent mt-2">
+          <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-500 bg-clip-text text-transparent mt-2 neon-glow">
             AI宇宙的
           </span>
-          <span className="block mt-2">
+          <span className="block mt-2 text-white neon-glow">
             下一个前沿
           </span>
         </h1>
@@ -36,10 +36,10 @@ export default function HeroSection() {
         </p>
         
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button size="lg" className="gap-2 px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-0">
-            <Rocket className="size-5" />
+          <Button size="lg" className="gap-2 px-8 py-6 text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 border-0 shadow-[0_0_30px_rgba(59,130,246,0.7)] hover:shadow-[0_0_50px_rgba(59,130,246,0.9)] transition-all duration-300 animate-pulse-slow border border-blue-400/30 hover:border-blue-300/50">
+            <Rocket className="size-5 animate-bounce-slow" />
             立即发射 · 免费试用
-            <ArrowRight className="size-5" />
+            <ArrowRight className="size-5 animate-pulse" />
           </Button>
           <Button size="lg" variant="outline" className="px-8 py-6 text-lg border-blue-500/50 text-blue-300 hover:bg-blue-950/50">
             <Globe className="size-5" />
@@ -48,21 +48,21 @@ export default function HeroSection() {
         </div>
         
         <div className="mt-16 grid grid-cols-2 gap-4 md:grid-cols-4">
-          <div className="rounded-xl border border-blue-500/30 bg-blue-950/30 p-6 text-center backdrop-blur-sm">
-            <div className="text-3xl font-bold text-blue-300">100+</div>
-            <div className="text-sm text-blue-200/80">AI模型与工具</div>
+          <div className="rounded-xl border border-blue-500/50 bg-blue-950/40 p-6 text-center backdrop-blur-sm shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:border-blue-400/70 hover:scale-105 transition-all duration-300">
+            <div className="text-3xl font-bold text-blue-300 neon-glow">100+</div>
+            <div className="text-sm text-blue-200/90 mt-2">AI模型与工具</div>
           </div>
-          <div className="rounded-xl border border-purple-500/30 bg-purple-950/30 p-6 text-center backdrop-blur-sm">
-            <div className="text-3xl font-bold text-purple-300">50K+</div>
-            <div className="text-sm text-purple-200/80">注册开发者</div>
+          <div className="rounded-xl border border-purple-500/50 bg-purple-950/40 p-6 text-center backdrop-blur-sm shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:border-purple-400/70 hover:scale-105 transition-all duration-300">
+            <div className="text-3xl font-bold text-purple-300 neon-glow">50K+</div>
+            <div className="text-sm text-purple-200/90 mt-2">注册开发者</div>
           </div>
-          <div className="rounded-xl border border-cyan-500/30 bg-cyan-950/30 p-6 text-center backdrop-blur-sm">
-            <div className="text-3xl font-bold text-cyan-300">10M+</div>
-            <div className="text-sm text-cyan-200/80">API调用/月</div>
+          <div className="rounded-xl border border-cyan-500/50 bg-cyan-950/40 p-6 text-center backdrop-blur-sm shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] hover:border-cyan-400/70 hover:scale-105 transition-all duration-300">
+            <div className="text-3xl font-bold text-cyan-300 neon-glow">10M+</div>
+            <div className="text-sm text-cyan-200/90 mt-2">API调用/月</div>
           </div>
-          <div className="rounded-xl border border-green-500/30 bg-green-950/30 p-6 text-center backdrop-blur-sm">
-            <div className="text-3xl font-bold text-green-300">24/7</div>
-            <div className="text-sm text-green-200/80">太空站运营</div>
+          <div className="rounded-xl border border-green-500/50 bg-green-950/40 p-6 text-center backdrop-blur-sm shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] hover:border-green-400/70 hover:scale-105 transition-all duration-300">
+            <div className="text-3xl font-bold text-green-300 neon-glow">24/7</div>
+            <div className="text-sm text-green-200/90 mt-2">太空站运营</div>
           </div>
         </div>
       </div>
