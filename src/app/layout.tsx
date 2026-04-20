@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import StarsBackground from "@/components/StarsBackground";
 import MouseFollower from "@/components/MouseFollower";
+import AuthProvider from "@/components/AuthProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -91,7 +92,9 @@ export default function RootLayout({
           
           {/* 主要内容 */}
           <div className="relative z-10">
-            {children}
+            <AuthProvider>
+              {children}
+            </AuthProvider>
           </div>
           
           {/* 动态生成星星 */}
